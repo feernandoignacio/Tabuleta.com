@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="description"
+        content="Encontre os melhores estabelecimentos do seu bairro. Restaurantes, mercados, serviços e muito mais.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Tabuleta</title>
+
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/partials/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet" />
+    <!--icone aba-->
+    <link rel="icon" href="assets/icon 32x32.png" type="image/png">
+
+
+
+</head>
+
+<body>
+    <header class="header" role="banner">
+        <div class="container-header">
+            <a href="index.html" class="logo">
+                <img src="/assets/Logo.png" alt="Logo Tabuleta" class="logo-img" />
+            </a>
+
+
+            <nav class="nav" id="nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav-list">
+                    <li><a class="link-nav" href="home.html">Início</a></li>
+                    <li><a class="link-nav" href="#categorias">Categorias</a></li>
+                    <li><a class="link-nav" href="#promocoes">Promoções</a></li>
+                    <li><a class="link-nav" href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="button-contato">
+                <a class="button-nav login" href="login.html">Login</a>
+            </div>
+
+            <button class="abrir-menu" id="menu-toggle" aria-label="Abrir menu mobile">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile" role="dialog" aria-modal="true">
+            <button class="btn-fechar" id="closeBtn" aria-label="Fechar menu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a class="link-nav" href="home.html">Início</a></li>
+                    <li><a class="link-nav" href="#categorias">Categorias</a></li>
+                    <li><a class="link-nav" href="#promocoes">Promoções</a></li>
+                    <li><a class="link-nav" href="#contato">Contato</a></li>
+                    <li><a class="link-nav login" href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overlay-menu" id="overlay"></div>
+    </header>
+
+
+    <main class="main-home">
+        <!-- Hero -->
+        <section class="hero" aria-label="Apresentação">
+            <div class="hero-content">
+                <h1>Explore o melhor do seu bairro com facilidade</h1>
+                <p>Serviços, comércios, restaurantes e oportunidades pertinho de você, prontos para serem descobertos.
+                </p>
+
+                <form class="search-form" role="search">
+                    <i class="bi bi-geo-alt local-icon" aria-hidden="true"></i>
+                    <input type="text" id="endereco" name="endereco" placeholder="Endereço ou nome do local"
+                        aria-label="Buscar estabelecimento">
+                    <button type="submit" aria-label="Buscar"><i class="bi bi-search"></i> Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="categorias" id="categorias" aria-label="Categorias de serviços">
+            <div class="categorias-grid">
+                <article class="card-categoria restaurante">
+                    <img src="/assets/Food2.png" alt="Imagem de hambúrguer" class="img-categoria-bg" />
+                    <div class="conteudo-card">
+                        <h2>Restaurante</h2>
+                        <a href="#" class="btn-card">Buscar lojas <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+
+
+                <article class="card-categoria mercado">
+                    <img src="/assets/supermarket2.png" alt="Carrinho de supermercado" class="img-categoria-bg" />
+                    <div class="conteudo-card">
+                        <h2>Mercado</h2>
+                        <a href="#" class="btn-card">Buscar lojas <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+
+        <section class="subcategorias" aria-label="Subcategorias de serviços">
+            <div class="subcategorias-grid">
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/drink.png" alt="Bebidas" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Bebidas</h2>
+                    </div>
+                </article>
+
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/Hamburger2.png" alt="Lanchonete" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Lanchonete</h2>
+                    </div>
+                </article>
+
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/pharmacy.jpeg" alt="Farmácia" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Farmácia</h2>
+                    </div>
+                </article>
+
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/pet.png" alt="Pet Shop" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Pet Shop</h2>
+                    </div>
+                </article>
+
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/clothes.png" alt="Roupas" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Roupas</h2>
+                    </div>
+                </article>
+
+                <article class="card-categoria-pequeno">
+                    <img src="/assets/Food.png" alt="Serviços" class="img-categoria-bg">
+                    <div class="conteudo-card">
+                        <h2>Serviços</h2>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- Promoções -->
+        <section class="promocoes" id="promocoes" aria-label="Promoções locais">
+            <h2>Promoções em destaque</h2>
+            <div class="promocoes-grid">
+                <!-- Cards com promoções dinâmicas virão aqui futuramente -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contato">
+        <p>&copy; 2025 Tabuleta. Todos os direitos reservados.</p>
+    </footer>
+
+
+
+
+
+
+
+    <script src="/js/header.js"></script>
+
+</body>
+
+</html>
