@@ -6,10 +6,18 @@
 }
 
 body {
-    font-family: 'Roboto', "Marcellus", sans-serif, "Marcellus SC", serif;
+    font-family: 'Roboto', 'Marcellus', serif;
     color: #333;
     background-color: #fff;
     line-height: 1.6;
+}
+
+/* Transições globais suaves */
+img,
+.card-categoria,
+.card-categoria-pequeno,
+.btn {
+    transition: all 0.3s ease;
 }
 
 /* Hero */
@@ -39,7 +47,6 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 .local-icon {
     font-size: 1.3rem;
@@ -72,6 +79,12 @@ body {
     font-size: 1rem;
 }
 
+.search-form button:hover {
+    background-color: #ccc99a;
+    color: white;
+    text-decoration: none;
+}
+
 .label-pesquisa {
     display: block;
     text-align: center;
@@ -81,8 +94,6 @@ body {
     color: #555;
     width: 100%;
 }
-
-
 
 /* Seção de categorias */
 .categorias-grid {
@@ -102,12 +113,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: flex-end;
-    font-family: "Marcellus", "Marcellus SC", 'Roboto', sans-serif, serif;
-    transition: transform 0.3s ease;
-}
-
-.card-categoria:hover {
-    transform: translateY(-6px);
+    font-family: 'Marcellus', serif;
 }
 
 
@@ -121,7 +127,6 @@ body {
     opacity: 0.88;
 }
 
-/* Conteúdo sobre a imagem */
 .conteudo-card {
     position: relative;
     z-index: 2;
@@ -130,19 +135,31 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .conteudo-card h2 {
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Marcellus', serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* Botão interno */
+/* Botões base */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Botão interno dos cards */
 .btn-card {
     background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    color: white;
     padding: 0.4rem 1rem;
     border-radius: 8px;
     font-weight: 500;
@@ -150,27 +167,18 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    text-decoration: none !important;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
 }
 
 .btn-card:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    color: #fff !important;
-    text-decoration: none !important;
+    color: white;
+    text-decoration: none;
 }
 
-.btn-card:visited {
-    color: #fff !important;
-    text-decoration: none !important;
-}
-
-
-
-
-
-
-/* Subcartões */
+/* Subcategorias */
 .subcategorias-grid {
     display: flex;
     flex-wrap: wrap;
@@ -182,21 +190,26 @@ body {
 
 .card-categoria-pequeno {
     position: relative;
-    width: 160px;
+    flex: 1 1 160px;
+    max-width: 200px;
     height: 140px;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
     display: flex;
     align-items: flex-end;
-    transition: transform 0.3s ease;
-    font-family: "Marcellus", "Marcellus SC", 'Roboto', sans-serif, serif;
+    font-family: 'Marcellus', serif;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
 
 .card-categoria-pequeno:hover {
-    transform: translateY(-4px);
+    filter: brightness(1.1);
+    text-decoration: none;
 }
 
+/* Imagem de fundo */
 .card-categoria-pequeno .img-categoria-bg {
     position: absolute;
     inset: 0;
@@ -207,7 +220,7 @@ body {
     opacity: 0.85;
 }
 
-
+/* Conteúdo do card */
 .card-categoria-pequeno .conteudo-card {
     position: relative;
     z-index: 2;
@@ -220,15 +233,30 @@ body {
     border-radius: 8px;
 }
 
-
+/* Título */
 .card-categoria-pequeno h2 {
     font-size: 1rem;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #fbe2b9;
 }
 
 
-/*Botão Ver todos*/
+
+
+
+/* Remove qualquer efeito de link */
+.card-categoria-pequeno:visited,
+.card-categoria-pequeno:focus,
+.card-categoria-pequeno:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+/* Botão Ver Todos */
 .ver-todos-wrapper {
     text-align: center;
     margin-top: 0.5rem;
@@ -236,62 +264,101 @@ body {
 
 .btn-ver-todos {
     background-color: #755858;
-    color: #fff;
-    padding: 0.3rem 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
-    font-weight: 500;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
 }
 
 .btn-ver-todos:hover {
     background-color: #5a4545;
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
 
 
+/* Promoções */
+.promocoes {
+    padding: 4rem 2rem;
+    text-align: center;
+}
 
-
-/*Promoções*/
 .promocoes h2 {
-    margin-top: 6rem;
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: #333;
     font-weight: 500;
+    margin-top: 3rem;
+    margin-bottom: 5.5rem;
+    font-family: 'Marcellus', serif;
+}
+
+/* Grid dos cards quadrados */
+.promocoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card-promocao {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+}
+
+.card-promocao:hover {
+    transform: translateY(-5px);
+}
+
+.card-promocao img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-footer {
-    background-color: #eee;
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: #555;
+/* Card retangular grande */
+.card-promo-retangular {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
+.card-promo-retangular:hover {
+    transform: translateY(-4px);
+}
 
+.card-promo-retangular img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
 
+.info-retangular {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    max-width: 60%;
+}
 
-
-
-
+.card-promo-retangular h3,
+.card-promo-retangular p {
+    color: white;
+    margin: 0;
+}
 
 
 /* Footer */
@@ -322,7 +389,6 @@ footer {
 .footer-logo-img {
     height: 40px;
     object-fit: contain;
-    margin: 0;
 }
 
 .footer-links {
@@ -344,8 +410,6 @@ footer {
 .footer-links a:hover {
     color: #9cad9a;
     text-decoration: underline;
-    text-decoration: none;
-
 }
 
 .footer-social {
@@ -364,14 +428,13 @@ footer {
 .footer-social a {
     font-size: 1.5rem;
     color: #755858;
-    transition: color 0.3s;
 }
 
 .footer-social a:hover {
     color: #9cad9a;
 }
 
-/* Parte inferior mais abaixo */
+/* Parte inferior */
 .footer-bottom {
     margin-top: 2.5rem;
     text-align: center;
@@ -382,22 +445,29 @@ footer {
     color: #777;
 }
 
-
-
-
 /* Responsivo */
 @media (max-width: 768px) {
     .nav ul {
         display: none;
     }
 
-    .search-bar {
+    .search-form {
         flex-direction: column;
     }
 
-    .categorias {
-        flex-direction: column;
-        align-items: center;
+    .info-retangular {
+        position: static;
+        padding: 1rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        max-width: 100%;
+    }
+
+    .info-retangular h3 {
+        font-size: 1.4rem;
+    }
+
+    .info-retangular p {
+        font-size: 1rem;
     }
 
     .footer-top {
