@@ -1,14 +1,18 @@
-document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('menu-mobile').classList.add('ativo');
-    document.getElementById('overlay').classList.add('ativo');
-});
+const menuToggle = document.getElementById('menu-toggle');
+const menuMobile = document.getElementById('menu-mobile');
+const closeBtn = document.getElementById('closeBtn');
+const overlay = document.getElementById('overlay');
 
-document.getElementById('closeBtn').addEventListener('click', () => {
-    document.getElementById('menu-mobile').classList.remove('ativo');
-    document.getElementById('overlay').classList.remove('ativo');
-});
+function abrirMenu() {
+    menuMobile.classList.add('ativo');
+    overlay.classList.add('ativo');
+}
 
-document.getElementById('overlay').addEventListener('click', () => {
-    document.getElementById('menu-mobile').classList.remove('ativo');
-    document.getElementById('overlay').classList.remove('ativo');
-});
+function fecharMenu() {
+    menuMobile.classList.remove('ativo');
+    overlay.classList.remove('ativo');
+}
+
+menuToggle.addEventListener('click', abrirMenu);
+closeBtn.addEventListener('click', fecharMenu);
+overlay.addEventListener('click', fecharMenu);
